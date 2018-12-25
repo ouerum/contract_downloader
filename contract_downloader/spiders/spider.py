@@ -97,8 +97,7 @@ class ContractSpider(scrapy.spiders.Spider):
         if abi.text() is None or len(abi.text()) == 0:
             return None
         file_path = r'verified_contract_abis/' + contractAddr + ".abi"
-        # if os.path.exists(file_path):
-        #     return None
+
         print(file_path)
         out = open(file_path, "w+")
         out.write(abi.text())
@@ -111,8 +110,7 @@ class ContractSpider(scrapy.spiders.Spider):
         if bin.text() is None or len(bin.text()) == 0:
             return None
         file_path = r'verified_contract_bins/' + contractAddr + ".bin"
-        # if os.path.exists(file_path):
-        #     return None
+
         print(file_path)
         out = open(file_path, "w+")
         out.write(bin.text())
